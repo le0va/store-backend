@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import {router as productsRoutes} from './routes/products-routes';
+import { router as productsRoutes } from './routes/products-routes';
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     next();
 });
 
- app.use('/api/products', productsRoutes);
+app.use('/api/products', productsRoutes);
 
 app.use((req, res, next) => {
     res.status(404).json({ message: 'Could not find this route' });
